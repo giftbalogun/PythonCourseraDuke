@@ -12,13 +12,12 @@ def is_peak_at(data, i, w):
         if data[i] <= data[i - j]:
             return False
 
-    # Check condition 4: Data[i] greater than or equal to the W values to its right
+    # Check condition 4: Data[i] greater than the W values to its right
     for j in range(1, w + 1):
-        if data[i] <= data[i + j]:
+        if data[i] < data[i + j]:
             return False
 
     return True
-
 
 
 def count_laps(data, w):
@@ -89,7 +88,7 @@ if __name__ == "__main__":
     data6 = [187, 188, 189, 186, 180]
     peaksat6 = [2]
     # we can make a list of tuples for the data we want to test with for
-    # w = 2
+    w = 2
     w2_data = [(data0, peaksat0), (data1, peaksat1), (data2, peaksat2),
                (data3, peaksat3), (data4, peaksat4), (data5, peaksat5),
                (data6, peaksat6)]
